@@ -7,7 +7,7 @@
  *
  * Return: always return 0
  *
-*/
+ */
 int main(void)
 {
 	int n;
@@ -27,3 +27,4 @@ int main(void)
 		printf("%d is positive\n", n);
 	}
 	return (0);
+}
