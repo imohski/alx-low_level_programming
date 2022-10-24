@@ -1,22 +1,22 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
 /**
- * main - Entry point
+ * main - entry point
  *
- * Return: Always 0
+ * Return: Always returns 0
  *
  */
 int main(void)
 {
-	char abc = 'a';
+	char a;
 
-	while (abc <= 'z')
+	for (a = 'a'; a <= 'z' ; a++)
 	{
-		if (abc == 'e' || abc == 'q')
-			++abc;
+		if (a == 'q' || a == 'e')
+		{
+			continue;
+		}
+		putchar(a);
 	}
 	putchar('\n');
-
 	return (0);
 }
