@@ -1,57 +1,33 @@
 #include "main.h"
-<<<<<<< HEAD
 
 /**
- * _strncat - concatinate 2 strings.
- * *@dest: first string.
- * *@src: second string.
- * *@n: the number of bytes to use from src.
- * *Return: string.
-=======
-/**
- * _strncat - concatenates two strings,
- * @dest: destination.
- * @src: source.
- * @n: amount of bytes used from src.
- * Return: the pointer to dest.
->>>>>>> 7fc1439042afd9eab29b10369f56935674207582
+ * cap_string - a function that capitalizes all words of a string
+ * @n: input string
+ * Return: caps on first letter of a separator
  */
-char *_strncat(char *dest, char *src, int n)
+
+char *cap_string(char *n)
 {
-<<<<<<< HEAD
-	int i = 0, k = 0;
+	int i, x;
+	int let = 32;
+	int separators[] = {',', ';', '.', '?', '"',
+		'(', ')', '{', '}', ' ', '\n', '\t'};
 
-	while (dest[i] != '\0')
-		i++;
-	while (src[k] != '\0' && n > k)
+	for (i = 0; n[i] != '\0'; i++)
 	{
-		dest[i] = src[k];
-		k++;
-		i++;
+		if (n[i] >= 'a' && n[i] <= 'z')
+		{
+			n[i] = n[i] - let;
+		}
+		let = 0;
+		for (x = 0; x <= 12; x++)
+		{
+			if (n[i] == separators[x])
+			{
+				x = 12;
+				let = 32;
+			}
+		}
 	}
-	if (n > 0)
-	{
-		dest[i] = '\0';
-	}
-=======
-	int i;
-	int j;
-
-	i = 0;
-	while (dest[i] != '\0')
-	{
-		i++;
-	}
-
-	j = 0;
-	while (j < n && src[j] != '\0')
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-
->>>>>>> 7fc1439042afd9eab29b10369f56935674207582
-	return (dest);
+	return (n);
 }
