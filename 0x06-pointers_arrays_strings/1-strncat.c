@@ -1,33 +1,28 @@
 #include "main.h"
 
 /**
- * cap_string - a function that capitalizes all words of a string
- * @n: input string
- * Return: caps on first letter of a separator
- */
+*_strncat - concatinate 2 strings.
+*@dest: first string.
+*@src: second string.
+*@n: the number of bytes to use from src.
+*Return: string.
+*/
 
-char *cap_string(char *n)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i, x;
-	int let = 32;
-	int separators[] = {',', ';', '.', '?', '"',
-	'(', ')', '{', '}', ' ', '\n', '\t'};
+	int i = 0, k = 0;
 
-	for (i = 0; n[i] != '\0'; i++)
+	while (dest[i] != '\0')
+		i++;
+	while (src[k] != '\0' && n > k)
 	{
-		if (n[i] >= 'a' && n[i] <= 'z')
-		{
-			n[i] = n[i] - let;
-		}
-		let = 0;
-		for (x = 0; x <= 12; x++)
-		{
-			if (n[i] == separators[x])
-			{
-				x = 12;
-				let = 32;
-			}
-		}
+		dest[i] = src[k];
+		k++;
+		i++;
 	}
-	return (n);
+	if (n > 0)
+	{
+		dest[i] = '\0';
+	}
+	return (dest);
 }
